@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index(BMI) CALCULATOR</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    *{
+        margin: 0px;padding: 0px;box-sizing: border-box;
+    }
+    .card-header{
+        background: #00E8E8;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 25px;
+    }
+    .card-footer{
+        background: lightcoral;
+        color: #fff;
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+    .card{
+        background: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 75%;
+    }
+    label{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .button{
+        padding: 10px 30px;
+        font-size: 20px;
+        border-radius: 100px;
+
+    }
+    header{
+        background: rgb(7, 7, 68);
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    ::placeholder{
+        color: rgb(247, 232, 28) !important;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <header>
+       <div class="container">
+           <div class="card ">
+               <div class="card-header text-center">BMI Calculator</div>
+               <div class="card-body">
+                   <form action="" class="m-auto w-50" onsubmit="return false" >
+                       <div class="form-group">
+                           <label for="">Weight:</label>
+                           <input type="text" name="" class="form-control" id="weight" placeholder="Enter Weight in kg.">
+                       </div>
+                       <div class="form-group">
+                        <label for="">Height:</label>
+                        <input type="text" name="" class="form-control" id="height" placeholder="Enter Height in fit">
+                    </div>
+                    <div class="form-group">
+                        <label for="">BMI Value:</label>
+                        <input type="text" name="" class="form-control" id="bmivalue">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn button btn-success" onclick="calculateBmi()">Calculate</button>
+                    </div>
+                   </form>
+               </div>
+               <div class="card-footer text-center">A healthy BMI ranges between 19 and 25</div>
+           </div>
+       </div>
+    </header>
+
+
+
+    <script>
+        function calculateBmi() {
+            var weight=document.getElementById("weight").value;
+            var height=document.getElementById("height").value;
+            height=height*12*0.025;
+            bmivaluecalc=weight/(height*height);
+            bmivaluecalculator=Math.round(bmivaluecalc);
+            document.getElementById("bmivalue").value=bmivaluecalculator;   
+        }
+    </script>
+</body>
+</html>
